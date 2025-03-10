@@ -76,7 +76,7 @@ export default function ContactPage() {
                   <CardTitle className="text-white">Get in Touch</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <form className="space-y-4">
+                  <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="space-y-2">
                       <label
                         htmlFor="name"
@@ -87,7 +87,8 @@ export default function ContactPage() {
                       <Input
                         id="name"
                         placeholder="Your name"
-                        className="bg-zinc-800/50 border-zinc-700 focus:border-zinc-600"
+                        className="bg-zinc-800/50 border-zinc-700 focus:border-zinc-600 text-white"
+                        onChange={handleChange}
                       />
                     </div>
 
@@ -102,7 +103,7 @@ export default function ContactPage() {
                         id="email"
                         type="email"
                         placeholder="Your email"
-                        className="bg-zinc-800/50 border-zinc-700 focus:border-zinc-600"
+                        className="bg-zinc-800/50 border-zinc-700 focus:border-zinc-600 text-white"
                       />
                     </div>
 
@@ -117,7 +118,7 @@ export default function ContactPage() {
                         id="message"
                         placeholder="Your message"
                         rows={5}
-                        className="bg-zinc-800/50 border-zinc-700 focus:border-zinc-600"
+                        className="bg-zinc-800/50 border-zinc-700 focus:border-zinc-600 text-white"
                       />
                     </div>
 
@@ -178,23 +179,6 @@ export default function ContactPage() {
                       <div>
                         <h3 className="text-zinc-300 font-medium">Location</h3>
                         <p className="text-zinc-400">Bucharest, Romania</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <div className="bg-zinc-800 p-2 rounded-full">
-                        <Globe className="h-5 w-5 text-zinc-400" />
-                      </div>
-                      <div>
-                        <h3 className="text-zinc-300 font-medium">Website</h3>
-                        <a
-                          href="https://beowolf23.io"
-                          target="_blank"
-                          className="text-zinc-400 hover:text-white transition-colors"
-                          rel="noreferrer"
-                        >
-                          beowolf23.io
-                        </a>
                       </div>
                     </div>
 
