@@ -16,6 +16,7 @@ import {
   Github,
   Globe,
 } from 'lucide-react'
+import { toast } from 'sonner'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -28,6 +29,7 @@ export default function ContactPage() {
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
+    console.log(name, value)
   }
 
   const handleSubmit = async (e) => {
@@ -42,12 +44,19 @@ export default function ContactPage() {
 
       console.log(formDataBody)
 
-      const res = await fetch('/api/send', {
+      await fetch('/api/send', {
         method: 'POST',
         body: formDataBody,
       })
-      console.log(res)
+      setFormData({ name: '', email: '', message: '' })
+
+      toast('Message sent!', {
+        description: "Thanks for reaching out. I'll get back to you soon.",
+      })
     } catch (error) {
+      toast('Something went wrong!', {
+        description: "Your message couldn't be sent. Please try again.",
+      })
       console.log(error)
     } finally {
       setIsSubmitting(false)
@@ -86,6 +95,8 @@ export default function ContactPage() {
                       </label>
                       <Input
                         id="name"
+                        name="name"
+                        value={formData.name}
                         placeholder="Your name"
                         className="bg-zinc-800/50 border-zinc-700 focus:border-zinc-600 text-white"
                         onChange={handleChange}
@@ -102,8 +113,11 @@ export default function ContactPage() {
                       <Input
                         id="email"
                         type="email"
+                        name="email"
+                        value={formData.email}
                         placeholder="Your email"
                         className="bg-zinc-800/50 border-zinc-700 focus:border-zinc-600 text-white"
+                        onChange={handleChange}
                       />
                     </div>
 
@@ -117,8 +131,11 @@ export default function ContactPage() {
                       <Textarea
                         id="message"
                         placeholder="Your message"
+                        value={formData.message}
+                        name="message"
                         rows={5}
                         className="bg-zinc-800/50 border-zinc-700 focus:border-zinc-600 text-white"
+                        onChange={handleChange}
                       />
                     </div>
 
@@ -126,7 +143,13 @@ export default function ContactPage() {
                       type="submit"
                       className="w-full gap-2 bg-zinc-800 hover:bg-zinc-700 text-white"
                     >
-                      Send Message <Send className="h-4 w-4" />
+                      {!isSubmitting ? (
+                        <>
+                          Send Message <Send className="h-4 w-4" />
+                        </>
+                      ) : (
+                        'Sending your message...'
+                      )}
                     </Button>
                   </form>
                 </CardContent>
