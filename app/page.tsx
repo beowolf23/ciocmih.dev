@@ -109,8 +109,8 @@ export default function Home() {
             <div className="w-full text-center">
               <p className="text-white mb-4 text-sm md:text-base max-w-2xl mx-auto">
                 I build exceptional and accessible digital experiences for the
-                web. Specializing in modern JavaScript frameworks and
-                user-centered design.
+                web. Specializing in modern JavaScript frameworks, seamless
+                backend integrations and user-centered design.
               </p>
 
               {/* Skills/Tags */}
