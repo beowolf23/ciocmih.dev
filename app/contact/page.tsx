@@ -14,7 +14,6 @@ import {
   Send,
   Linkedin,
   Github,
-  Globe,
 } from 'lucide-react'
 import { toast } from 'sonner'
 
@@ -67,29 +66,33 @@ export default function ContactPage() {
     <div className="min-h-screen bg-black text-white">
       <div className="absolute inset-0 bg-gradient-to-b from-zinc-900 to-black opacity-80"></div>
 
-      <div className="relative container mx-auto px-4 py-12">
+      <div className="relative container mx-auto px-4 py-8 md:py-12">
         <Link
           href="/"
-          className="inline-flex items-center text-zinc-400 hover:text-white mb-8 transition-colors"
+          className="inline-flex items-center text-zinc-400 hover:text-white mb-6 md:mb-8 transition-colors text-sm md:text-base"
         >
           <ArrowLeft className="mr-2 h-4 w-4" /> Back to Home
         </Link>
 
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold mb-8">Contact Me</h1>
+          <h1 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8">
+            Contact Me
+          </h1>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             <div>
-              <Card className="bg-zinc-900/30 border-zinc-800">
-                <CardHeader>
-                  <CardTitle className="text-white">Get in Touch</CardTitle>
+              <Card className="bg-zinc-900/30 border-zinc-800 h-full">
+                <CardHeader className="pb-3 md:pb-4">
+                  <CardTitle className="text-xl md:text-2xl text-white">
+                    Get in Touch
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="space-y-2">
                       <label
                         htmlFor="name"
-                        className="text-sm font-medium text-zinc-300"
+                        className="text-xs md:text-sm font-medium text-zinc-300"
                       >
                         Name
                       </label>
@@ -98,7 +101,7 @@ export default function ContactPage() {
                         name="name"
                         value={formData.name}
                         placeholder="Your name"
-                        className="bg-zinc-800/50 border-zinc-700 focus:border-zinc-600 text-white"
+                        className="bg-zinc-800/50 border-zinc-700 focus:border-zinc-600 text-white text-sm md:text-base"
                         onChange={handleChange}
                       />
                     </div>
@@ -106,7 +109,7 @@ export default function ContactPage() {
                     <div className="space-y-2">
                       <label
                         htmlFor="email"
-                        className="text-sm font-medium text-zinc-300"
+                        className="text-xs md:text-sm font-medium text-zinc-300"
                       >
                         Email
                       </label>
@@ -116,7 +119,7 @@ export default function ContactPage() {
                         name="email"
                         value={formData.email}
                         placeholder="Your email"
-                        className="bg-zinc-800/50 border-zinc-700 focus:border-zinc-600 text-white"
+                        className="bg-zinc-800/50 border-zinc-700 focus:border-zinc-600 text-white text-sm md:text-base"
                         onChange={handleChange}
                       />
                     </div>
@@ -124,7 +127,7 @@ export default function ContactPage() {
                     <div className="space-y-2">
                       <label
                         htmlFor="message"
-                        className="text-sm font-medium text-zinc-300"
+                        className="text-xs md:text-sm font-medium text-zinc-300"
                       >
                         Message
                       </label>
@@ -134,14 +137,15 @@ export default function ContactPage() {
                         value={formData.message}
                         name="message"
                         rows={5}
-                        className="bg-zinc-800/50 border-zinc-700 focus:border-zinc-600 text-white"
+                        className="bg-zinc-800/50 border-zinc-700 focus:border-zinc-600 text-white text-sm md:text-base"
                         onChange={handleChange}
                       />
                     </div>
 
                     <Button
                       type="submit"
-                      className="w-full gap-2 bg-zinc-800 hover:bg-zinc-700 text-white"
+                      disabled={isSubmitting}
+                      className="w-full gap-2 bg-zinc-800 hover:bg-zinc-700 text-white text-sm md:text-base h-10 md:h-11"
                     >
                       {!isSubmitting ? (
                         <>
@@ -158,22 +162,24 @@ export default function ContactPage() {
 
             <div>
               <Card className="bg-zinc-900/30 border-zinc-800 h-full">
-                <CardHeader>
-                  <CardTitle className="text-white">
+                <CardHeader className="pb-3 md:pb-4">
+                  <CardTitle className="text-xl md:text-2xl text-white">
                     Contact Information
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-6">
+                  <div className="space-y-4 md:space-y-6">
                     <div className="flex items-start gap-3">
-                      <div className="bg-zinc-800 p-2 rounded-full">
-                        <Mail className="h-5 w-5 text-zinc-400" />
+                      <div className="bg-zinc-800 p-2 rounded-full flex-shrink-0">
+                        <Mail className="h-4 w-4 md:h-5 md:w-5 text-zinc-400" />
                       </div>
                       <div>
-                        <h3 className="text-zinc-300 font-medium">Email</h3>
+                        <h3 className="text-zinc-300 font-medium text-sm md:text-base">
+                          Email
+                        </h3>
                         <a
                           href="mailto:mihaiciocan44@gmail.com"
-                          className="text-zinc-400 hover:text-white transition-colors"
+                          className="text-zinc-400 hover:text-white transition-colors text-sm md:text-base break-all"
                         >
                           mihaiciocan44@gmail.com
                         </a>
@@ -181,14 +187,16 @@ export default function ContactPage() {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <div className="bg-zinc-800 p-2 rounded-full">
-                        <Phone className="h-5 w-5 text-zinc-400" />
+                      <div className="bg-zinc-800 p-2 rounded-full flex-shrink-0">
+                        <Phone className="h-4 w-4 md:h-5 md:w-5 text-zinc-400" />
                       </div>
                       <div>
-                        <h3 className="text-zinc-300 font-medium">Phone</h3>
+                        <h3 className="text-zinc-300 font-medium text-sm md:text-base">
+                          Phone
+                        </h3>
                         <a
                           href="tel:+40737605900"
-                          className="text-zinc-400 hover:text-white transition-colors"
+                          className="text-zinc-400 hover:text-white transition-colors text-sm md:text-base"
                         >
                           +40 737 605 900
                         </a>
@@ -196,24 +204,28 @@ export default function ContactPage() {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <div className="bg-zinc-800 p-2 rounded-full">
-                        <MapPin className="h-5 w-5 text-zinc-400" />
+                      <div className="bg-zinc-800 p-2 rounded-full flex-shrink-0">
+                        <MapPin className="h-4 w-4 md:h-5 md:w-5 text-zinc-400" />
                       </div>
                       <div>
-                        <h3 className="text-zinc-300 font-medium">Location</h3>
-                        <p className="text-zinc-400">Bucharest, Romania</p>
+                        <h3 className="text-zinc-300 font-medium text-sm md:text-base">
+                          Location
+                        </h3>
+                        <p className="text-zinc-400 text-sm md:text-base">
+                          Bucharest, Romania
+                        </p>
                       </div>
                     </div>
 
                     <div className="pt-4 border-t border-zinc-800">
-                      <h3 className="text-zinc-300 font-medium mb-3">
+                      <h3 className="text-zinc-300 font-medium mb-3 text-sm md:text-base">
                         Connect with me
                       </h3>
                       <div className="flex gap-3">
                         <Button
                           variant="outline"
                           size="icon"
-                          className="rounded-full border-zinc-800 bg-transparent hover:bg-zinc-900 hover:border-zinc-700"
+                          className="rounded-full border-zinc-800 bg-transparent hover:bg-zinc-900 hover:border-zinc-700 h-9 w-9 md:h-10 md:w-10"
                           asChild
                         >
                           <Link
@@ -226,7 +238,7 @@ export default function ContactPage() {
                         <Button
                           variant="outline"
                           size="icon"
-                          className="rounded-full border-zinc-800 bg-transparent hover:bg-zinc-900 hover:border-zinc-700"
+                          className="rounded-full border-zinc-800 bg-transparent hover:bg-zinc-900 hover:border-zinc-700 h-9 w-9 md:h-10 md:w-10"
                           asChild
                         >
                           <Link
@@ -242,6 +254,18 @@ export default function ContactPage() {
                 </CardContent>
               </Card>
             </div>
+          </div>
+
+          <div className="flex justify-center mt-8 md:mt-12">
+            <Button
+              variant="outline"
+              className="gap-2 border-zinc-800 bg-transparent hover:bg-zinc-900 hover:border-zinc-700 text-sm md:text-base"
+              asChild
+            >
+              <Link href="/">
+                <ArrowLeft className="h-4 w-4" /> Back to Home
+              </Link>
+            </Button>
           </div>
         </div>
       </div>
