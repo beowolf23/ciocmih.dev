@@ -107,7 +107,7 @@ export default function Home() {
 
             {/* Description */}
             <div className="w-full text-center">
-              <p className="text-zinc-400 mb-4 text-sm md:text-base max-w-2xl mx-auto">
+              <p className="text-white mb-4 text-sm md:text-base max-w-2xl mx-auto">
                 I build exceptional and accessible digital experiences for the
                 web. Specializing in modern JavaScript frameworks and
                 user-centered design.
@@ -117,43 +117,43 @@ export default function Home() {
               <div className="flex flex-wrap justify-center gap-1.5 md:gap-2 mb-8 md:mb-10">
                 <Badge
                   variant="outline"
-                  className="bg-transparent border-zinc-800 text-zinc-400 hover:bg-zinc-900 text-xs md:text-sm"
+                  className="bg-transparent border-zinc-800 text-white hover:bg-zinc-900 text-xs md:text-sm"
                 >
                   React
                 </Badge>
                 <Badge
                   variant="outline"
-                  className="bg-transparent border-zinc-800 text-zinc-400 hover:bg-zinc-900 text-xs md:text-sm"
+                  className="bg-transparent border-zinc-800 text-white hover:bg-zinc-900 text-xs md:text-sm"
                 >
                   Next.js
                 </Badge>
                 <Badge
                   variant="outline"
-                  className="bg-transparent border-zinc-800 text-zinc-400 hover:bg-zinc-900 text-xs md:text-sm"
+                  className="bg-transparent border-zinc-800 text-white hover:bg-zinc-900 text-xs md:text-sm"
                 >
                   TypeScript
                 </Badge>
                 <Badge
                   variant="outline"
-                  className="bg-transparent border-zinc-800 text-zinc-400 hover:bg-zinc-900 text-xs md:text-sm"
+                  className="bg-transparent border-zinc-800 text-white hover:bg-zinc-900 text-xs md:text-sm"
                 >
                   Tailwind CSS
                 </Badge>
                 <Badge
                   variant="outline"
-                  className="bg-transparent border-zinc-800 text-zinc-400 hover:bg-zinc-900 text-xs md:text-sm"
+                  className="bg-transparent border-zinc-800 text-white hover:bg-zinc-900 text-xs md:text-sm"
                 >
                   Node.js
                 </Badge>
                 <Badge
                   variant="outline"
-                  className="bg-transparent border-zinc-800 text-zinc-400 hover:bg-zinc-900 text-xs md:text-sm"
+                  className="bg-transparent border-zinc-800 text-white hover:bg-zinc-900 text-xs md:text-sm"
                 >
                   Java
                 </Badge>
                 <Badge
                   variant="outline"
-                  className="bg-transparent border-zinc-800 text-zinc-400 hover:bg-zinc-900 text-xs md:text-sm"
+                  className="bg-transparent border-zinc-800 text-white hover:bg-zinc-900 text-xs md:text-sm"
                 >
                   Go
                 </Badge>
