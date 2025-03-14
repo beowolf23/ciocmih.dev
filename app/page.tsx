@@ -53,53 +53,56 @@ export default function Home() {
       <div className="relative flex items-center justify-center min-h-screen py-10 px-4">
         <div className="container max-w-4xl mx-auto">
           <div className="flex flex-col items-center">
-            <Avatar className="w-20 h-20 md:w-24 md:h-24 mb-4 md:mb-6 ring-2 ring-zinc-800">
-              <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback>MC</AvatarFallback>
-            </Avatar>
+            <div className="flex flex-row items-center gap-6">
+              <Avatar className="!w-50 !h-50 sm:w-24 sm:h-24 md:w-28 md:h-28 mb-4 md:mb-6 ring-2 ring-zinc-800">
+                <AvatarImage src="/myself.jpeg" alt="Profile" />
+                <AvatarFallback>MC</AvatarFallback>
+              </Avatar>
+              <div className="flex flex-col items-center">
+                <h1 className="text-2xl md:text-3xl font-bold tracking-tight mb-1 text-center">
+                  Mihai Ciocan
+                </h1>
+                <h2 className="text-lg md:text-xl text-zinc-400 mb-3 text-center">
+                  Full-Stack Developer
+                </h2>
 
-            <h1 className="text-2xl md:text-3xl font-bold tracking-tight mb-1 text-center">
-              Mihai Ciocan
-            </h1>
-            <h2 className="text-lg md:text-xl text-zinc-400 mb-3 text-center">
-              Full-Stack Developer
-            </h2>
-
-            {/* Social Links */}
-            <div className="flex space-x-3 mb-6">
-              <Button
-                variant="outline"
-                size="icon"
-                className="rounded-full border-zinc-800 bg-transparent hover:bg-zinc-900 hover:border-zinc-700 h-9 w-9 md:h-10 md:w-10"
-                asChild
-              >
-                <Link href="https://github.com" target="_blank">
-                  <Github className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className="rounded-full border-zinc-800 bg-transparent hover:bg-zinc-900 hover:border-zinc-700 h-9 w-9 md:h-10 md:w-10"
-                asChild
-              >
-                <Link
-                  href="https://linkedin.com/in/mihai-ciocan"
-                  target="_blank"
-                >
-                  <Linkedin className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className="rounded-full border-zinc-800 bg-transparent hover:bg-zinc-900 hover:border-zinc-700 h-9 w-9 md:h-10 md:w-10"
-                asChild
-              >
-                <Link href="mailto:mihaiciocan44@gmail.com">
-                  <Mail className="h-4 w-4" />
-                </Link>
-              </Button>
+                {/* Social Links */}
+                <div className="flex space-x-3 mb-6">
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="rounded-full border-zinc-800 bg-transparent hover:bg-zinc-900 hover:border-zinc-700 h-9 w-9 md:h-10 md:w-10"
+                    asChild
+                  >
+                    <Link href="https://github.com/beowolf23" target="_blank">
+                      <Github className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="rounded-full border-zinc-800 bg-transparent hover:bg-zinc-900 hover:border-zinc-700 h-9 w-9 md:h-10 md:w-10"
+                    asChild
+                  >
+                    <Link
+                      href="https://linkedin.com/in/mihai-ciocan"
+                      target="_blank"
+                    >
+                      <Linkedin className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="rounded-full border-zinc-800 bg-transparent hover:bg-zinc-900 hover:border-zinc-700 h-9 w-9 md:h-10 md:w-10"
+                    asChild
+                  >
+                    <Link href="mailto:mihaiciocan44@gmail.com">
+                      <Mail className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
             </div>
 
             {/* Description */}
